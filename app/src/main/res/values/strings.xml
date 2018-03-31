@@ -1,0 +1,108 @@
+<resources>
+    <string name="app_name">Predictopia</string>
+    <string-array name="admission">
+        <item>college_name</item>
+        <item>year</item>
+        <item>location</item>
+        <item>rank</item>
+        <item>branch_name</item>
+        <item>branch_cut_off</item>
+        <item>branch_prev_yr_placement</item>
+        <item>nba_accreditation</item>
+    </string-array>
+
+    <string-array name="placement">
+        <item>college_name</item>
+        <item>year</item>
+        <item>location</item>
+        <item>number_of_companies_visited</item>
+        <item>number_of_partner_companies</item>
+        <item>branch_name</item>
+        <item>quality_of_placement_training</item>
+        <item>avg_salary_package</item>
+        <item>industry_feedback</item>
+        <item>avg_student_performance</item>
+    </string-array>
+
+    <string-array name="college_abd">
+        <item>Select College</item>
+        <item>CEPT</item>
+        <item>RU</item>
+        <item>VGEC</item>
+    </string-array>
+
+    <string-array name="college_vardora">
+        <item>Select College</item>
+        <item>BIT</item>
+        <item>SIT</item>
+    </string-array>
+
+    <string-array name="college_gandhi">
+        <item>Select College</item>
+        <item>GEC</item>
+        <item>DA-IICT</item>
+    </string-array>
+
+    <string-array name="branch_name">
+        <item>Select Branch</item>
+        <item>CS</item>
+        <item>ECE</item>
+        <item>MECH</item>
+    </string-array>
+
+    <string-array name="nba_accreditation">
+        <item>Select NBA Accreditation</item>
+        <item>T1</item>
+        <item>T2</item>
+    </string-array>
+
+    <string-array name="location">
+        <item>Select Location</item>
+        <item>AHMEDABAD</item>
+        <item>VADODARA</item>
+        <item>GANDHINAGAR</item>
+    </string-array>
+
+    <string-array name="student_performance">
+        <item>INDUSTRY READY</item>
+        <item>NEEDS PRACTICE</item>
+        <item>NEEDS TRAINING</item>
+    </string-array>
+
+    <string-array name="quality_of_placement">
+        <item>EXCELLENT</item>
+        <item>GOOD</item>
+        <item>AVERAGE</item>
+        <item>POOR</item>
+    </string-array>
+
+    <string name="location">Location</string>
+    <string name="rank">Rank</string>
+    <string name="branch_cut_off">Branch Cut-Off</string>
+    <string name="branch_prev_yr_placement">Branch Placement %</string>
+    <string name="number_of_companies_visited">Number of Company Visited</string>
+    <string name="quality_of_placement_training">Quality of Placement Training</string>
+    <string name="avg_salary_package">Average Salary Package</string>
+    <string name="avg_student_performance">Average Student Performance</string>
+    <string name="partner_companies">Number of Partner Companies</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Mobile</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Go</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string name="select_college">Select College</string>
+    <string name="select_location">Select Location</string>
+    <string name="select_branch">Select Branch</string>
+    <string name="select_nda">Select NDA Accreditation</string>
+</resources>
