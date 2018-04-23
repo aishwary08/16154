@@ -20,10 +20,11 @@ public class SplashScreen extends Activity {
             @Override
             public void run() {
                 boolean login = session.checkLogin();
-                Log.e("login",login+"");
-                if(login){
-                Intent i = new Intent(SplashScreen.this, MainActivity.class);
-                startActivity(i);}
+                Log.e("login", login + "");
+                if (login) {
+                    Intent i = new Intent(SplashScreen.this, MainActivity.class);
+                    startActivity(i);
+                }
                 finish();
             }
         }, SPLASH_TIME_OUT);

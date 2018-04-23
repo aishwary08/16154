@@ -1,15 +1,19 @@
 package com.software.predictopia;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.Html;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Gravity;
@@ -20,8 +24,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -146,7 +152,7 @@ public class MainActivity extends AppCompatActivity implements ValidationRespons
 
                     Log.d("data", data.toString());
                     GetResult conn = new GetResult(MainActivity.this);
-                    showProgress(true);
+                    //showProgress(true);
                     conn.delegate = MainActivity.this;
                     conn.execute("11.24.26.146", "8888", data.toString());
 
@@ -221,12 +227,36 @@ public class MainActivity extends AppCompatActivity implements ValidationRespons
         } else {
             partnerCompanies.setError(null);
         }
+
+        if (spinnerLocation.getSelectedItem().toString().equals("Select Location")) {
+            TextView errorText = (TextView) spinnerLocation.getSelectedView();
+            errorText.setError("");
+            errorText.setTextColor(Color.RED);
+            errorText.setText("Select Location");
+            valid = false;
+        }
+
+        if (spinnerCollegeName.getSelectedItem().toString().equals("Select College")) {
+            TextView errorText = (TextView) spinnerCollegeName.getSelectedView();
+            errorText.setError("");
+            errorText.setTextColor(Color.RED);
+            errorText.setText("Select College");
+            valid = false;
+        }
+
+        if (spinnerBranch.getSelectedItem().toString().equals("Select Branch")) {
+            TextView errorText = (TextView) spinnerBranch.getSelectedView();
+            errorText.setError("");
+            errorText.setTextColor(Color.RED);
+            errorText.setText("Select Branch");
+            valid = false;
+        }
         return valid;
     }
 
     @Override
     public void response(boolean result, String s) {
-        showProgress(false);
+        //showProgress(false);
         if (result) {
             Intent i = new Intent(MainActivity.this, ReportAcitvity.class);
             i.putExtra("data", s);
@@ -275,6 +305,30 @@ public class MainActivity extends AppCompatActivity implements ValidationRespons
                 session.logoutUser();
                 finish();
                 break;
+            case R.id.menu_ip: {
+                final String[] m_Text = {"192.168.1.8"};
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setCancelable(false);
+                builder.setTitle("IP Address");
+
+                // Set up the input
+                final EditText input = new EditText(this);
+                // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+                input.setInputType(InputType.TYPE_CLASS_TEXT );
+                builder.setView(input);
+
+                // Set up the buttons
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        m_Text[0] = input.getText().toString();
+                        URLS.Script_URL = m_Text[0];
+                        Log.e("url",URLS.Script_URL);
+                    }
+                });
+                builder.show();
+                break;
+            }
         }
         return true;
     }

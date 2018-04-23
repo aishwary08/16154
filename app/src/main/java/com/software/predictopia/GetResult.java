@@ -37,7 +37,7 @@ public class GetResult extends AsyncTask<String, Void, String> {
         String resp = "";
 
         try {
-            socket = new Socket("192.168.43.89", 8881);
+            socket = new Socket(URLS.Script_URL, 8881);
             Log.d("isConnected", socket.isConnected() + "");
             OutputStream sout = socket.getOutputStream();
             byte[] bytes = params[2].getBytes("UTF-8");
