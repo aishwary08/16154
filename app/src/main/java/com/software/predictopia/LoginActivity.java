@@ -180,7 +180,7 @@ public class LoginActivity extends AppCompatActivity implements ValidationRespon
                     e.printStackTrace();
                 }
                 if (error) {
-                    Snackbar.make(findViewById(R.id.email_login_form), Html.fromHtml("<b> Error !!</b>"), Snackbar.LENGTH_INDEFINITE).show();
+                    Snackbar.make(findViewById(R.id.email_login_form), Html.fromHtml("<b> Error !!</b>"), Snackbar.LENGTH_LONG).show();
                 } else {
                     boolean login = false;
                     try {
@@ -218,7 +218,7 @@ public class LoginActivity extends AppCompatActivity implements ValidationRespon
                     }
                 }
             } else
-                Snackbar.make(findViewById(R.id.email_login_form), Html.fromHtml("<b> "+s+" </b>"), Snackbar.LENGTH_INDEFINITE).show();
+                Snackbar.make(findViewById(R.id.email_login_form), Html.fromHtml("<b> "+s+" </b>"), Snackbar.LENGTH_LONG).show();
         }
 
         @Override

@@ -116,12 +116,12 @@ public class SignupActivity extends AppCompatActivity implements ValidationRespo
                 if (error_no == 1062) {
                     _mobileText.setError("Mobile Number Already Registered ");
                 } else
-                    Snackbar.make(_signup_form, Html.fromHtml("<b> Error !!</b>"), Snackbar.LENGTH_INDEFINITE).show();
+                    Snackbar.make(_signup_form, Html.fromHtml("<b> Error !!</b>"), Snackbar.LENGTH_LONG).show();
             } else
                 onSignupSuccess();
         }
         else
-            Snackbar.make(_signup_form, Html.fromHtml("<b> Connection Error. Please Try Again! </b>"), Snackbar.LENGTH_INDEFINITE).show();
+            Snackbar.make(_signup_form, Html.fromHtml("<b> Connection Error. Please Try Again! </b>"), Snackbar.LENGTH_LONG).show();
     }
 
     public void onSignupSuccess() {

@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -25,6 +26,9 @@ import java.util.List;
 
 public class ReportAcitvity extends AppCompatActivity {
 
+    TextView plc_dist_da;
+    TextView adm_plc_da;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +37,8 @@ public class ReportAcitvity extends AppCompatActivity {
         Intent intent = getIntent();
         String data = intent.getStringExtra("data");
         String branch = intent.getStringExtra("branch");
+        String loc = intent.getStringExtra("location");
+        String coll = intent.getStringExtra("college");
 
         TableLayout scrollable_table = (TableLayout) findViewById(R.id.scrollable_part);
         int textBackground1 = ContextCompat.getColor(this, R.color.textBackground1);
@@ -41,6 +47,14 @@ public class ReportAcitvity extends AppCompatActivity {
         TableRow tr = null;
         List<Double> placementPercent = null;
         List<String> keySet = null;
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+
+        plc_dist_da = (TextView) findViewById(R.id.plc_dist_da);
+        plc_dist_da.setText("Placement Distribution in "+loc+": ");
+        adm_plc_da = (TextView) findViewById(R.id.adm_plc_da);
+        adm_plc_da.setText(coll+" admission and placement value in "+loc+": ");
 
         try {
 

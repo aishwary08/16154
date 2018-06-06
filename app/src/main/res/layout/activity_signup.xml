@@ -19,7 +19,7 @@
             android:layout_marginBottom="24dp"
             android:gravity="center"
             android:text="Predictopia"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="26dip"
             android:textStyle="bold" />
 

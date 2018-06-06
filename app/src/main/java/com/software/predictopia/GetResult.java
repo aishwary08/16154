@@ -60,6 +60,8 @@ public class GetResult extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String s) {
+        MainActivity obj = (MainActivity) ctx;
+        obj.showProgress(false);
         Log.d("dopost", "here" + s);
         boolean isJSON = true;
         if (!s.equals("None")) {

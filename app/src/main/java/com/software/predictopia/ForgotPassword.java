@@ -97,7 +97,7 @@ public class ForgotPassword extends AppCompatActivity implements ValidationRespo
                     e.printStackTrace();
                 }
                 if (error_no != 0)
-                    Snackbar.make(findViewById(R.id.forgot_password_form), Html.fromHtml("<b> Error !!</b>"), Snackbar.LENGTH_INDEFINITE).show();
+                    Snackbar.make(findViewById(R.id.forgot_password_form), Html.fromHtml("<b> Error !!</b>"), Snackbar.LENGTH_LONG).show();
             } else {
                 boolean exists = false;
                 try {
@@ -122,7 +122,7 @@ public class ForgotPassword extends AppCompatActivity implements ValidationRespo
                     Intent i = new Intent(ForgotPassword.this, LoginActivity.class);
                     startActivity(i);
                     finish();
-                    Snackbar.make(findViewById(R.id.forgot_password_form), Html.fromHtml("<b> Updated !!</b>"), Snackbar.LENGTH_INDEFINITE).show();
+                    Snackbar.make(findViewById(R.id.forgot_password_form), Html.fromHtml("<b> Updated !!</b>"), Snackbar.LENGTH_LONG).show();
                 }
             }
         }

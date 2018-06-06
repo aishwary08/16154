@@ -88,6 +88,13 @@ public class Get_Result extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String s) {
+        if (ctx instanceof ForgotPassword){
+            ((ForgotPassword)ctx).showProgress(false);
+        }else if (ctx instanceof LoginActivity){
+            ((LoginActivity)ctx).showProgress(false);
+        }else if(ctx instanceof SignupActivity){
+            ((SignupActivity)ctx).showProgress(false);
+        }
         Log.d("dopost", "here" + s);
         boolean isJSON = true;
         if(!s.equals("None")) {

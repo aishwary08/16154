@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity implements ValidationRespons
 
                     Log.d("data", data.toString());
                     GetResult conn = new GetResult(MainActivity.this);
-                    //showProgress(true);
+                    showProgress(true);
                     conn.delegate = MainActivity.this;
                     conn.execute("11.24.26.146", "8888", data.toString());
 
@@ -261,9 +261,11 @@ public class MainActivity extends AppCompatActivity implements ValidationRespons
             Intent i = new Intent(MainActivity.this, ReportAcitvity.class);
             i.putExtra("data", s);
             i.putExtra("branch", String.valueOf(spinnerBranch.getSelectedItem()));
+            i.putExtra("location", String.valueOf(spinnerLocation.getSelectedItem()));
+            i.putExtra("college", String.valueOf(spinnerCollegeName.getSelectedItem()));
             startActivity(i);
         } else
-            Snackbar.make(findViewById(R.id.input_form), Html.fromHtml("<b> " + s + " </b>"), Snackbar.LENGTH_INDEFINITE).show();
+            Snackbar.make(findViewById(R.id.input_form), Html.fromHtml("<b> " + s + " </b>"), Snackbar.LENGTH_LONG).show();
     }
 
     @Override
@@ -314,7 +316,8 @@ public class MainActivity extends AppCompatActivity implements ValidationRespons
                 // Set up the input
                 final EditText input = new EditText(this);
                 // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
-                input.setInputType(InputType.TYPE_CLASS_TEXT );
+                input.setInputType(InputType.TYPE_CLASS_TEXT);
+                input.setText(URLS.Script_URL);
                 builder.setView(input);
 
                 // Set up the buttons
@@ -323,7 +326,7 @@ public class MainActivity extends AppCompatActivity implements ValidationRespons
                     public void onClick(DialogInterface dialog, int which) {
                         m_Text[0] = input.getText().toString();
                         URLS.Script_URL = m_Text[0];
-                        Log.e("url",URLS.Script_URL);
+                        Log.e("url", URLS.Script_URL);
                     }
                 });
                 builder.show();
